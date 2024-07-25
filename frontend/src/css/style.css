@@ -91,3 +91,15 @@ header nav ul li:hover a{
 }
 /* end responsive  */
 /* end header */
+/* start Teachers */
+.Teachers h2{
+
+}
+.Teachers .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.Teachers .cards .card{
+
+}
+/* end Teachers */
