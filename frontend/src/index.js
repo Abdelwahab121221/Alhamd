@@ -1,42 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./css/style.css";
 import App from "./App";
-import Teachers from "./pages/Teachers";
-import Students from "./pages/Students"
-import Assists from "./pages/Assists"
-import Management from "./pages/Management"
-
 // Create a BrowserRouter and RouterProvider to use react-router-dom
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: ".....sorry this page is not found",
-  },
-  // Add more routes as needed
-  {
-    path: "The teachers",
-    element: <Teachers />,
-  },
-  {
-    path: "The students",
-    element: <Students />,
-  },
-  {
-    path: "The assists",
-    element: <Assists />
-  },
-  {
-    path: "The management",
-    element: <Management />
-  }
-]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>
 );
 

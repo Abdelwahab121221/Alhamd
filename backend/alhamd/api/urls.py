@@ -1,4 +1,5 @@
 from django.urls import path
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from . import views
 
 urlpatterns = [
@@ -12,9 +13,12 @@ urlpatterns = [
     path('Students/create',views.createStudent,name='create-Student'),
     path('Students/update/<int:id>',views.updateStudent , name='update-Student'),
     path('Students/delete/<int:id>',views.deleteStudent ,name = 'delete-Student'),
-    path("Assistants", views.assistants, name="students"),
+    path("Assistants", views.assistants, name="assistants"),
     path('Assistant/<int:id>',views.getAssistant , name = 'get-Assistant'),
     path('Assistants/create',views.createAssistant,name='create-Assistant'),
     path('Assistants/update/<int:id>',views.updateAssistant , name='update-Assistant'),
-    path('Assistants/delete/<int:id>',views.deleteAssistant ,name = 'delete-Assistant')
+    path('Assistants/delete/<int:id>',views.deleteAssistant ,name = 'delete-Assistant'),
+    path('users',views.user_detail , name = 'users'),
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

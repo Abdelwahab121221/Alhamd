@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/style.css'
-function Header() {
+function Header({ children }) {
+    console.log(children)
     return (
         <header>
             <nav>
