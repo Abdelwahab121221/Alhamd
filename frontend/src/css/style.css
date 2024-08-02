@@ -1,105 +1,269 @@
 /* Global rules*/
-:root{
-    --main-color:#046104;
-    --title : white;
+:root {
+  --background-of-login-singup: url("/public/background.jpg");
+  --main-color: #046104;
+  --title: white;
+  --main-color-of-loin-singup: #fff;
+  --second-color-of-loin-singup: rgba(255, 255, 255, 0.6);
 }
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-*:focus{
-    outline:none;
+*:focus {
+  outline: none;
 }
-body{
-    font-family: 'Open Sans' , sans-serif;
+body {
+  font-family: "Open Sans", sans-serif;
 }
-ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-li{
-    text-decoration: none;
+li {
+  text-decoration: none;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-.container{
-    padding: 0 15px;
-    margin-right: auto;
-    margin-left: auto;
-    max-width:100%;
+input[type="checkbox"] {
+  cursor: pointer;
 }
-/* small */
-@media (min-width: 768px) {
-    .container{
-        width: 750px;
-    }
+table {
+  margin-top: 10px;
+  width: 100%;
+  overflow-x: auto;
 }
-/* Medium */
-@media (min-width: 992px) {
-    .container{
-        width: 970px;
-    }
+table td,
+table th {
+  padding: 5px;
+  border: 2px solid #eee;
+  border-top: none;
+  text-align: center;
 }
-/* Big */
-@media (min-width:1200px) {
-    .container{
-        width: 1170px;
-    }
+table td a {
+  color: black;
 }
+table thead tr {
+  background-color: #eee;
+}
+hr {
+  margin: 10px 0;
+}
+.content {
+  padding-top: 15vh;
+}
+/* start NotFound Page  */
+.not-found{
+  background-color: black;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* end NotFound Page  */
 /* start header */
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: var(--main-color);
-    position: fixed;
-    width: 100%;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--main-color);
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
-header h1 a{
-    color: var(--title);
+header h1 a {
+  color: var(--title);
 }
 /* start nav  */
-header nav ul{
-    display: flex;
+header nav ul {
+  display: flex;
 }
-header nav ul li{
-    margin: 0 10px;
-    transition: 0.3s;
+header nav ul li {
+  margin: 0 10px;
+  transition: 0.3s;
 }
-header nav ul li:hover{
-    scale: 1.2;
+header nav ul li:hover {
+  scale: 1.2;
 }
-header nav ul li a{
-    color: var(--title);
-    transition: 0.3s;
+header nav ul li a {
+  color: var(--title);
+  transition: 0.3s;
 }
-header nav ul li:hover a{
-    color: blue;
+header nav ul li:hover a {
+  color: blue;
 }
 /* end nav  */
 /* start responsive  */
-@media (max-width:767px) {
-    header{
-        flex-direction: column-reverse;
-        text-align: center;
-    }
+@media (max-width: 767px) {
+  header {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
 }
 /* end responsive  */
 /* end header */
+/* start singup and login*/
+.singup,
+.login {
+  height: 100vh;
+  background-image: var(--background-of-login-singup);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.singup .box,
+.login .box {
+  width: 60%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-color-of-loin-singup);
+}
+.singup .header,
+.login .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.singup .header label,
+.login .header label {
+  font-size: 20px;
+  font-weight: 500;
+}
+.singup h1,
+.login h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 9px 25px;
+}
+.singup .inp,
+.login .inp {
+  direction: rtl;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--second-color-of-loin-singup);
+  width: 300px;
+  padding-left: 25px;
+  caret-color: var(--main-color-of-loin-singup);
+}
+.login .inp {
+  width: 250px;
+}
+.singup .inp::placeholder,
+.login .inp::placeholder {
+  transition: 0.3s;
+  color: var(--main-color-of-loin-singup);
+}
+.singup .inp:focus::placeholder,
+.login .inp:focus::placeholder {
+  opacity: 0;
+}
+.singup .info,
+.login .info {
+  display: flex;
+  gap: 15px;
+}
+.singup .info input {
+  width: 140px;
+}
+.singup .submit,
+.login .submit {
+  display: flex;
+  justify-content: center;
+}
+.singup .submit .sub,
+.login .submit .sub {
+  outline: none;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  background-color: var(--second-color-of-loin-singup);
+  transition: 0.5s;
+}
+.singup .sub:hover,
+.login .sub:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 5px 7px 4px rgba(0, 0, 0, 0.2);
+}
+.login .end {
+  display: flex;
+  justify-content: space-between;
+  width: 265px;
+}
+.login .remember {
+  font-size: 15px;
+}
+.login .remember #remember {
+  margin-right: 4px;
+}
+.login .forgot a {
+  color: rgba(15, 147, 255, 0.699);
+  text-decoration: none;
+  font-size: 15px;
+}
+/* end singup */
+/* start TeacherPage */
+.TeacherPage .content {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+}
+/* end TeacherPage */
+/* start management */
+.management .content {
+  padding-top: 15vh;
+  display: flex;
+  flex-direction: column;
+}
+.management h2 {
+  text-align: start;
+}
+.management .students,
+.management .assistants {
+  padding: 0 20px;
+}
+
+.students .student-list table tbody td:first-child input {
+  outline: none;
+  border: none;
+  width: 50%;
+}
+
+/* end management */
+/* start student page */
+.studentPage .content h1 {
+  text-align: center;
+}
+.studentPage .content button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  cursor: pointer;
+}
+/* end student page */
 /* start Teachers */
-.Teachers h2{
-
-}
-.Teachers .cards{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-}
-.Teachers .cards .card{
-
-}
 /* end Teachers */

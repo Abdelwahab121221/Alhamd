@@ -1,11 +1,11 @@
 from rest_framework import serializers
-from .models import Student , Teacher , Assistants
+from .models import Student , Teacher , Assistants , Tables
 from django.contrib.auth.models import User
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'email', 'password']
+        fields = ['id','username', 'password']
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
@@ -17,4 +17,8 @@ class TeacherSerializer(serializers.ModelSerializer):
 class AssistantsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Assistants
+        fields = '__all__'
+class TablesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tables
         fields = '__all__'

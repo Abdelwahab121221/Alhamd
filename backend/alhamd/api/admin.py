@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Teacher , Student , Assistants
+from .models import Teacher , Student , Assistants , Tables
 '''
 username > admin
 password > Alhamd160@
@@ -10,3 +10,4 @@ password > Alhamd160@
 admin.site.register(Teacher)
 admin.site.register(Assistants)
 admin.site.register(Student)
+admin.site.register(Tables)

@@ -3,7 +3,7 @@ import Header from './components/Header.js';
 function App() {
   return (
     <div className="Alhamd">
-      <Header />
+      <Header lies = {['تسجيل الدخول','انشاء حساب']}/>
     </div>
   );
 }

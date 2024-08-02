@@ -1,20 +1,46 @@
-import React from 'react'
-import '../css/style.css'
-function Header({ children }) {
-    console.log(children)
+import React from "react";
+import "../css/style.css";
+import { Link } from "react-router-dom";
+function Header({ lies }) {
     return (
         <header>
             <nav>
                 <ul>
-                    <li><a href="/The teachers">الشيوخ</a></li>
-                    <li><a href="/The students">الطلاب</a></li>
-                    <li><a href="/The assists">المساعدين</a></li>
-                    <li><a href="/The management">الادارة العامة</a></li>
+                    {lies.map((li , index) => {
+                    return (
+                        <li key={index}>
+                        <Link
+                            to={
+                            li === "الطلاب"
+                                ? window.location.origin+(window.location.pathname === '/'? '' : window.location.pathname)+"/The students"
+                                : li === "المساعدين"
+                                ? window.location.origin+(window.location.pathname === '/'? '' : window.location.pathname)+"/The assistants"
+                                : li === "الشيوخ"
+                                ? window.location.origin+(window.location.pathname === '/'? '' : window.location.pathname)+"/The teachers"
+                                : li === "الادارة العامة"
+                                ? window.location.origin+(window.location.pathname === '/'? '' : window.location.pathname)+"/management"
+                                : li === 'تسجيل الدخول'
+                                ? '/login'
+                                : li === 'انشاء حساب'
+                                ?'/singup'
+                                :li === 'تسجيل الخروج'
+                                ?'/logout'
+                                : window.location.origin
+                            }
+                            target="_self"
+                            >
+                        {li}  
+                        </Link>
+                    </li>
+                    );
+                })}
                 </ul>
             </nav>
-            <h1><a href="#">الحمد</a></h1>
+            <h1>
+            <Link to="/Teacher">الحمد</Link>
+            </h1>
         </header>
-    )
+    );
 }
 
-export default Header
+export default Header;

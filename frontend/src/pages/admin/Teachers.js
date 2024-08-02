@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import '../css/style.css'
+import '../../css/style.css'
 function Teachers() {
     const [teachers, setTeachers] = useState([])
     async function getTeachers() {
